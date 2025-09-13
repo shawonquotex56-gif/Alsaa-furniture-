@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Saa Furniture</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        /* Slider Styles */
+        .slider {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            color: #00aaff;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        /* Services Section */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #1f2833;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #00aaff;
+        }
+
+        section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: #fff;
+            font-size: 20px;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #0b0c10;
+            font-size: 16px;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 36px;
+            }
+            section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slider -->
+    <div class="slider">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1601924582970-5a3d5213145a?auto=format&fit=crop&w=1470&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1598300054691-5c3f2b9b9e50?auto=format&fit=crop&w=1470&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1616628186017-54b0f6322be8?auto=format&fit=crop&w=1470&q=80');"></div>
+
+        <div class="overlay"></div>
+
+        <div class="content">
+            <img src="https://via.placeholder.com/150/00aaff/ffffff?text=Al+Saa+Logo" alt="Al Saa Furniture Logo">
+            <h1>Al Saa Furniture</h1>
+            <p>12 years of experience in furniture fixing, shifting, moving, and curtain services. Excellent customer service guaranteed.</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section>
+        <h2>Our Services</h2>
+        <p>We handle all kinds of furniture: sofas, curtains, beds, cabinets, and more. Professional fixing, shifting, and moving services with care and precision.</p>
+        <a class="whatsapp-btn" href="https://wa.me/97433252564" target="_blank">Chat with us on WhatsApp</a>
+    </section>
+
+    <section>
+        <h2>Luxury & Comfort</h2>
+        <p>We specialize in luxury sofas and curtains. Let us transform your home with our expert craftsmanship and attention to detail.</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Al Saa Furniture. All rights reserved. | Contact: +974 3325 2564
+    </footer>
+
+    <script>
+        // Slider JS
+        let slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if(i === index) slide.classList.add('active');
+            });
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000); // 5 seconds per slide
+    </script>
+
+</body>
+</html>
