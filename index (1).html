@@ -102,6 +102,7 @@
             background-color: #128c7e;
         }
 
+        /* Footer */
         footer {
             padding: 20px;
             text-align: center;
@@ -110,12 +111,43 @@
             color: #aaa;
         }
 
+        /* Gallery Styles */
+        .gallery {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #141a22;
+            scroll-behavior: smooth;
+        }
+
+        .gallery img {
+            flex: 0 0 auto;
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery::-webkit-scrollbar {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .content h1 {
                 font-size: 36px;
             }
             section h2 {
                 font-size: 28px;
+            }
+            .gallery img {
+                width: 200px;
             }
         }
     </style>
@@ -147,6 +179,17 @@
     <section>
         <h2>Luxury & Comfort</h2>
         <p>We specialize in luxury sofas and curtains. Let us transform your home with our expert craftsmanship and attention to detail.</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section>
+        <h2>Our Work Gallery</h2>
+        <div class="gallery">
+            <img src="images/IMG_20250912_173923.jpg" alt="Photo 1">
+            <img src="images/IMG_20250912_173949.jpg" alt="Photo 2">
+            <img src="images/IMG_20250912_174120.png" alt="Photo 3">
+            <img src="images/IMG_20250912_174431.jpg" alt="Photo 4">
+        </div>
     </section>
 
     <footer>
